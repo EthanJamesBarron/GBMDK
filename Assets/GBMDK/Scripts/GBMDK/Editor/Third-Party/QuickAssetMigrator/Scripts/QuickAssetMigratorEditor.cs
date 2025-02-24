@@ -197,7 +197,7 @@ namespace FizzSDK.QuickAssetMigrator
             }
 
             const string conversionOutputFolderName = "ConversionOutput";
-            string conversionOutputPath = Path.Combine(Application.dataPath, conversionOutputFolderName);
+            string conversionOutputPath = Path.GetRelativePath(Path.Combine(Application.dataPath, ".."), Path.Combine(Application.dataPath, conversionOutputFolderName));
 
             if (migrationPressed)
             {
