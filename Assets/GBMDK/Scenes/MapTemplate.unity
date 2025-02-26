@@ -504,18 +504,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 135.76262
       objectReference: {fileID: 0}
-    - target: {fileID: 7310421795408152643, guid: 99f33c5fcdb8b3b49afbc5da718c4a11, type: 3}
-      propertyPath: m_BoundingSphereOverride.w
-      value: 2.8015e-41
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310421795408152643, guid: 99f33c5fcdb8b3b49afbc5da718c4a11, type: 3}
-      propertyPath: m_BoundingSphereOverride.y
-      value: 8e-44
-      objectReference: {fileID: 0}
-    - target: {fileID: 7310421795408152643, guid: 99f33c5fcdb8b3b49afbc5da718c4a11, type: 3}
-      propertyPath: m_BoundingSphereOverride.z
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99f33c5fcdb8b3b49afbc5da718c4a11, type: 3}
 --- !u!4 &164029114 stripped
