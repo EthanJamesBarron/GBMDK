@@ -324,6 +324,7 @@ Light:
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 8e-44, z: 0, w: 2.8015e-41}
+  m_BoundingSphereOverride: {x: 0, y: 8e-44, z: 0, w: 2.8015e-41}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
