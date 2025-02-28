@@ -1,5 +1,4 @@
 using SFB;
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -237,7 +236,7 @@ namespace FizzSDK.QuickAssetMigrator
                     }
                 }
 
-                var folderObject = AssetDatabase.LoadAssetAtPath<UnityEngine.Object>(conversionOutputPath);
+                var folderObject = AssetDatabase.LoadAssetAtPath<UnityEngine.Object>(conversionOutputFolderName);
                 EditorUtility.FocusProjectWindow();
                 AssetDatabase.OpenAsset(folderObject);
                 AssetDatabase.Refresh();
