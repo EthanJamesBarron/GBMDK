@@ -1,0 +1,8 @@
+HOW TO USE MAP TESTER
+
+Go to GBMDK in the top bar -> Testing -> Test Map
+When you have already selected the Gang Beasts game folder, you don't have to select it again, since it is saved to disk.
+
+You also need to set a name other than ModName in Addressables > Profiles.
+
+Credit @konradkg25 (modified by @the_ultimatenuke for use in GBMDK)

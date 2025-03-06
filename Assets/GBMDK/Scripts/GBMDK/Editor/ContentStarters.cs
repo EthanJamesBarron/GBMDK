@@ -7,35 +7,9 @@ using UnityEditor.SceneManagement;
 using UnityEditor.SceneTemplate;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using UnityEngine.SceneManagement;
 
 namespace GBMDK.Editor
 {
-    /*
-    public class ContentStartersConfigWindow : EditorWindow
-    {
-        public GameObject[] SceneStarterObjects => _sceneStarterObjects.ToArray();
-        [SerializeField]
-        private List<GameObject> _sceneStarterObjects = new();
-
-        [MenuItem("Tools/GBMDK/Content Starters Config")]
-        public static void OpenWindow()
-        {
-            var window = GetWindow<ContentStartersConfigWindow>();
-            window.titleContent = new GUIContent("Content Starters Config");
-        }
-
-        public void CreateGUI()
-        {
-            var serializedObject = new SerializedObject(this);
-            var property = serializedObject.FindProperty(nameof(_sceneStarterObjects));
-            serializedObject.Update();
-            EditorGUILayout.PropertyField(property);
-            serializedObject.ApplyModifiedProperties();
-        }
-    }
-    */
-
     public class ContentStarters
     {
         private static void MarkAddressable(string assetPath, string assetAddress)
@@ -58,15 +32,7 @@ namespace GBMDK.Editor
 
             return path;
         }
-
-        /*
-        [MenuItem("Assets/GBMDK/Starters/Config")]
-        public static void RouteToStartersConfig()
-        {
-            ContentStartersConfigWindow.OpenWindow();
-        }
-        */
-
+        
         [MenuItem("Assets/GBMDK/Starters/Costume Starter", priority = 10000)]
         public static void CreateCostumeStuff()
         {
