@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98004a50-debc-46ce-afdb-2e2c03ef7d6c" name="Changes" comment="resolve #14 conflicts" />
+    <list default="true" id="98004a50-debc-46ce-afdb-2e2c03ef7d6c" name="Changes" comment="idk wtf is happening anymore">
+      <change beforePath="$PROJECT_DIR$/Assets/GBMDK/Prefabs/CityLight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GBMDK/Prefabs/CityLight.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GBMDK/Scenes/MapTemplate.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GBMDK/Scenes/MapTemplate.unity" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,7 +16,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="wip-branch" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -24,17 +27,17 @@
     &quot;assignee&quot;: &quot;TheUltimateNuke&quot;
   }
 }</component>
-  <component name="GitHubPullRequestState">{
-  &quot;prStates&quot;: [
+  <component name="GitHubPullRequestState"><![CDATA[{
+  "prStates": [
     {
-      &quot;id&quot;: {
-        &quot;id&quot;: &quot;PR_kwDOL3K6Ds6NsWU3&quot;,
-        &quot;number&quot;: 14
+      "id": {
+        "id": "PR_kwDOL3K6Ds6NsWU3",
+        "number": 14
       },
-      &quot;lastSeen&quot;: 1741294567929
+      "lastSeen": 1741296468847
     }
   ]
-}</component>
+}]]></component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/CementGB-4-0/GBMDK.git&quot;,
@@ -53,26 +56,6 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/61515b50a52f43e498751194ae644688132200/e7/e74af997/Label.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Assets/AddressableAssetsData/AddressableAssetSettings.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Assets/AddressableAssetsData/AddressableAssetSettings.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Assets/AddressableAssetsData/AssetGroupTemplates/Packed Assets.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Assets/AddressableAssetsData/AssetGroupTemplates/Packed Assets.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Assets/AddressableAssetsData/AssetGroups/Schemas/Default Local Group_BundledAssetGroupSchema.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Assets/AddressableAssetsData/AssetGroups/Schemas/Default Local Group_BundledAssetGroupSchema.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Assets/GBMDK/Prefabs/CityLight.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Assets/GBMDK/Prefabs/CityLight.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Assets/GBMDK/Prefabs/Templates/BasicInteractable.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Assets/GBMDK/Scenes/MapTemplate.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Assets/GBMDK/Scenes/MapTemplate.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Assets/GBMDK/Scenes/MapTemplate/LightingData.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Assets/GBMDK/Scenes/MapTemplate/LightingData.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Assets/GBMDK/Scripts/GBMDK/Editor/BuildShortcut.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Assets/GBMDK/Scripts/GBMDK/Editor/ContentStarters.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Assets/GBMDK/Scripts/GBMDK/Editor/ContentStarters.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Packages/manifest.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Packages/packages-lock.json" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -87,7 +70,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "#14 on wip-branch",
+    "git-widget-placeholder": "wip-branch",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -171,7 +154,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741294238661</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="idk wtf is happening anymore">
+      <option name="closed" value="true" />
+      <created>1741296304193</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1741296304193</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,6 +180,7 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="fix #13" />
     <MESSAGE value="add ModTester (Credit: @konradKG25) and move some GBMDK menus" />
-    <option name="LAST_COMMIT_MESSAGE" value="add ModTester (Credit: @konradKG25) and move some GBMDK menus" />
+    <MESSAGE value="idk wtf is happening anymore" />
+    <option name="LAST_COMMIT_MESSAGE" value="idk wtf is happening anymore" />
   </component>
 </project>
