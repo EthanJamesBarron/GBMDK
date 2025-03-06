@@ -17,7 +17,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -25,33 +24,33 @@
     &quot;assignee&quot;: &quot;TheUltimateNuke&quot;
   }
 }</component>
-  <component name="GitHubPullRequestState"><![CDATA[{
-  "prStates": [
+  <component name="GitHubPullRequestState">{
+  &quot;prStates&quot;: [
     {
-      "id": {
-        "id": "PR_kwDOL3K6Ds6NsWU3",
-        "number": 14
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDOL3K6Ds6NsWU3&quot;,
+        &quot;number&quot;: 14
       },
-      "lastSeen": 1741294567929
+      &quot;lastSeen&quot;: 1741294567929
     }
   ]
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/CementGB-4-0/GBMDK.git",
-    "accountId": "41538232-fbbe-44fa-af5c-a4c047ce9bd4"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/CementGB-4-0/GBMDK.git&quot;,
+    &quot;accountId&quot;: &quot;41538232-fbbe-44fa-af5c-a4c047ce9bd4&quot;
   },
-  "recentNewPullRequestHead": {
-    "server": {
-      "useHttp": false,
-      "host": "github.com",
-      "port": null,
-      "suffix": null
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
     },
-    "owner": "CementGB-4-0",
-    "repository": "GBMDK"
+    &quot;owner&quot;: &quot;CementGB-4-0&quot;,
+    &quot;repository&quot;: &quot;GBMDK&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/61515b50a52f43e498751194ae644688132200/e7/e74af997/Label.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Assets/AddressableAssetsData/AddressableAssetSettings.asset" root0="SKIP_HIGHLIGHTING" />
@@ -88,6 +87,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "#14 on wip-branch",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
