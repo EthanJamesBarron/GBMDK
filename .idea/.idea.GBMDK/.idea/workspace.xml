@@ -4,18 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="98004a50-debc-46ce-afdb-2e2c03ef7d6c" name="Changes" comment="idk wtf is happening anymore">
+    <list default="true" id="98004a50-debc-46ce-afdb-2e2c03ef7d6c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GBMDK/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GBMDK/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GBMDK/Prefabs/StaticPlane.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GBMDK/Prefabs/StaticPlane.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GBMDK/Prefabs/Templates/BasicInteractable.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GBMDK/Prefabs/Templates/BasicInteractable.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GBMDK/Prefabs/Templates/CustomContent/HatTemplate.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GBMDK/Prefabs/Templates/CustomContent/HatTemplate.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GBMDK/Scenes/MapTemplate.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GBMDK/Scenes/MapTemplate.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GBMDK/Scenes/MapTemplate_Template.scenetemplate" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GBMDK/Scenes/MapTemplate_Template.scenetemplate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GBMDK/Scripts/GBMDK/Editor/ContentStarters.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GBMDK/Scripts/GBMDK/Editor/ContentStarters.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GBMDK/Scripts/GBMDK/Editor/Testing/TestTemplates.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GBMDK/Scripts/GBMDK/Editor/Testing/TestTemplates.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GBMDK/Settings/Lighting/StandardBaked.lighting" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GBMDK/Settings/Lighting/StandardBaked.lighting" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,24 +55,7 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/61515b50a52f43e498751194ae644688132200/e7/e74af997/Label.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Assets/AddressableAssetsData/AddressableAssetSettings.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Assets/AddressableAssetsData/AddressableAssetSettings.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Assets/AddressableAssetsData/AddressableAssetSettings.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Assets/GBMDK/Prefabs/StaticPlane.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Assets/GBMDK/Prefabs/StaticPlane.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Assets/GBMDK/Prefabs/StaticPlane.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Assets/GBMDK/Prefabs/Templates/BasicInteractable.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Assets/GBMDK/Prefabs/Templates/BasicInteractable.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Assets/GBMDK/Prefabs/Templates/CustomContent/HatTemplate.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Assets/GBMDK/Prefabs/Templates/CustomContent/HatTemplate.prefab" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Assets/GBMDK/Scenes/MapTemplate.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Assets/GBMDK/Scripts/GBMDK/Editor/ContentStarters.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Assets/GBMDK/Scripts/GBMDK/Editor/ContentStarters.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Assets/GBMDK/Scripts/GBMDK/Editor/Testing/TestTemplates.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Dev Stuff/Projects/VS Community/Unity/Modding/GBMDK/Assets/GBMDK/Scripts/GBMDK/Editor/Testing/TestTemplates.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GBMDK/Scripts/GBMDK/Editor/PreviewTool/Main.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -164,6 +137,7 @@
       <workItem from="1741135284106" duration="2841000" />
       <workItem from="1741205178450" duration="2430000" />
       <workItem from="1741293347054" duration="2524000" />
+      <workItem from="1741380473596" duration="858000" />
     </task>
     <task id="LOCAL-00001" summary="fix #13">
       <option name="closed" value="true" />
@@ -189,7 +163,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741296304193</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="tweak templates and template testing">
+      <option name="closed" value="true" />
+      <created>1741309418691</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1741309418691</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,6 +190,7 @@
     <MESSAGE value="fix #13" />
     <MESSAGE value="add ModTester (Credit: @konradKG25) and move some GBMDK menus" />
     <MESSAGE value="idk wtf is happening anymore" />
-    <option name="LAST_COMMIT_MESSAGE" value="idk wtf is happening anymore" />
+    <MESSAGE value="tweak templates and template testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="tweak templates and template testing" />
   </component>
 </project>
