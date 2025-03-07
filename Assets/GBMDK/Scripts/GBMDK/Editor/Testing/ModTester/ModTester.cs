@@ -56,16 +56,17 @@ namespace GBMDK.Editor
                 var modName = settings.profileSettings.GetValueByName(settings.activeProfileId, "ModName");
 
                 var sourceFolderPath = Path.Combine(ExportedFolderPath, modName);
-                var destinationFolderPath = Path.Combine(GameFolderPath, "Mods", modName);
+                var destinationFolderPath = Path.Combine(ModsFolderPath, modName);
 
                 // Check if the source folder exists
                 if (Directory.Exists(sourceFolderPath))
                 {
-                    // If the destination folder doesn't exist, create it
-                    if (!Directory.Exists(destinationFolderPath))
+                    if (Directory.Exists(destinationFolderPath))
                     {
-                        Directory.CreateDirectory(destinationFolderPath);
+                        Directory.Delete(destinationFolderPath, true);
                     }
+                    
+                    Directory.CreateDirectory(destinationFolderPath);
 
                     // Copy all files from the source to the destination folder
                     foreach (var file in Directory.GetFiles(sourceFolderPath))
