@@ -16,7 +16,7 @@ namespace GBMDK.Editor
 
         private void ReplaceShaders()
         {
-            if (_toReplace == null || _replaceWith == null) return;
+            if (!_toReplace || !_replaceWith) return;
 
             foreach (var renderer in FindObjectsOfType<MeshRenderer>())
             {
