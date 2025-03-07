@@ -32,13 +32,18 @@ namespace GBMDK.Editor
 
             return path;
         }
-        
+
         [MenuItem("Assets/GBMDK/Starters/Costume Starter", priority = 10000)]
         public static void CreateCostumeStuff()
         {
-            var path = GetCurrentSelectedPath();
+            CreateCostumeStuff(null);
+        }
+        
+        public static void CreateCostumeStuff(string path)
+        {
+            path ??= GetCurrentSelectedPath();
 
-            var prefabTemplate = PrefabUtility.LoadPrefabContents($"{Application.dataPath}/GBMDK/Prefabs/Templates/CustomContent/HatTemplate.prefab");
+            var prefabTemplate = PrefabUtility.LoadPrefabContents($"Assets/GBMDK/Prefabs/Templates/CustomContent/HatTemplate.prefab");
             var assetPath = AssetDatabase.GenerateUniqueAssetPath(Path.Combine(path, $"NewCostume.prefab"));
             var prefab = PrefabUtility.SaveAsPrefabAssetAndConnect(prefabTemplate, assetPath, InteractionMode.AutomatedAction);
             prefab.name = "NewCostume";
@@ -70,11 +75,21 @@ namespace GBMDK.Editor
         [MenuItem("Assets/GBMDK/Starters/Map Starter", priority = 10000)]
         public static void CreateMapStuff()
         {
-            var path = GetCurrentSelectedPath();
+            CreateMapStuff(null);
+        }
+        
+        public static void CreateMapStuff(string path)
+        {
+            path ??= GetCurrentSelectedPath();
 
             var sceneTemplate = AssetDatabase.LoadAssetAtPath<SceneTemplateAsset>($"Assets/GBMDK/Scenes/MapTemplate_Template.scenetemplate");
+            Debug.Assert(sceneTemplate);
+            
             var scenePath = AssetDatabase.GenerateUniqueAssetPath(Path.Combine(path, "NewMap.unity"));
+            Debug.Log(scenePath);
+            
             var newScene = SceneTemplateService.Instantiate(sceneTemplate, false, scenePath);
+            Lightmapping.giWorkflowMode = Lightmapping.GIWorkflowMode.OnDemand;
             Lightmapping.Bake();
             EditorSceneManager.SaveScene(newScene.scene);
 

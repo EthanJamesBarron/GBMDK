@@ -1,4 +1,6 @@
+using System.IO;
 using UnityEditor;
+using UnityEngine;
 
 namespace GBMDK.Editor
 {
@@ -7,8 +9,11 @@ namespace GBMDK.Editor
         [MenuItem("GBMDK/Testing/Test GBMDK Templates")]
         public static void Test()
         {
-            ContentStarters.CreateMapStuff();
-            ContentStarters.CreateCostumeStuff();
+            var mapsAssetPath = "Assets/Maps";
+            var costumesAssetPath = "Assets/Costumes";
+            
+            ContentStarters.CreateMapStuff(mapsAssetPath);
+            ContentStarters.CreateCostumeStuff(costumesAssetPath);
             
             ModTester.TestMod();
         }
