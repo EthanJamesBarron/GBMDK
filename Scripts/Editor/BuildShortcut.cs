@@ -11,7 +11,8 @@ namespace GBMDK.Editor
         public static void OnTrigger()
         {
             var outputPath = Path.Combine(Application.dataPath, "Exported");
-            Directory.Delete(outputPath, true);
+            if (Directory.Exists(outputPath))
+                Directory.Delete(outputPath, true);
             Directory.CreateDirectory(outputPath);
             AssetDatabase.Refresh();
             AddressableAssetSettings.BuildPlayerContent();
@@ -21,7 +22,8 @@ namespace GBMDK.Editor
         public static void OnTriggerAB()
         {
             var outputPath = Path.Combine(Application.dataPath, "Exported", "AssetBundles");
-            Directory.Delete(outputPath, true);
+            if (Directory.Exists(outputPath))
+                Directory.Delete(outputPath, true);
             Directory.CreateDirectory(outputPath);
             BuildPipeline.BuildAssetBundles(outputPath, BuildAssetBundleOptions.None, BuildTarget.StandaloneWindows);
         }
