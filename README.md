@@ -1,7 +1,7 @@
 # GBMDK
 
 Gang Beasts Mod Development Kit: A pre-configured Unity project that contains dummy scripts and resources for building assets for Gang Beasts mods. 
-**[Requires Cement 4.0](https://github.com/CementGB-4-0/CementSource/releases/latest) installed on your game for map and costume creation.**
+**[Requires CementGB 4.0+](https://github.com/CementGB-4-0/CementSource/releases/latest) installed on your game for map and costume creation.**
 
 ## Disclaimer
 
