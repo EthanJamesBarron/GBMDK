@@ -1,0 +1,16 @@
+{
+    "name": "GBMDK",
+    "rootNamespace": "GBMDK",
+    "references": [
+        "GUID:5c797bae83758be45a7730bcfdf8bef1"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
