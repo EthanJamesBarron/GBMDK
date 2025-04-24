@@ -86,3 +86,5 @@ README.md.meta
 /Assets/GBMDK/Scripts/GBMDK/Editor/Third-Party/QuickAssetMigrator/source_folder_saved.txt.meta
 
 .idea
+AddressableAssetsData/Windows/
+AddressableAssetsData/AssetGroups/
