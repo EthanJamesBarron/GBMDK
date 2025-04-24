@@ -7,9 +7,45 @@ namespace GBMDK.Editor
     [InitializeOnLoad]
     public static class UpdateHelper
     {
+        public const string GBMDKFirstRunKey = "GBMDK_FirstRun";
+        
+        public static bool IsFirstRun => EditorPrefs.GetBool(GBMDKFirstRunKey, true);
+        
         static UpdateHelper()
         {
+            Initialize();
+        }
+
+        private static void Initialize()
+        {
+            if (!IsFirstRun) return;
+            
+            ExtractAddressableData();      
             ExtractProjectSettings();
+            EditorPrefs.SetBool(GBMDKFirstRunKey, false);
+        }
+
+        [MenuItem("GBMDK/Testing/Set First Run", priority = 10)]
+        private static void SetFirstRun()
+        {
+            EditorPrefs.SetBool(GBMDKFirstRunKey, true);
+            Initialize();
+        }
+
+        [MenuItem("GBMDK/Refresh Project Assets")]
+        private static void RefreshProjectAssets()
+        {
+            AssetDatabase.Refresh();
+        }
+
+        private static void ExtractAddressableData()
+        {
+            var packageAddrPath = $"{Application.dataPath}/../Packages/com.cementgb.gbmdk/AddressableAssetsData";
+            var projectAddrPath = $"{Application.dataPath}/AddressableAssetsData";
+            if (!Directory.Exists(packageAddrPath) || Directory.Exists(projectAddrPath)) return;
+            
+            CopyFilesRecursively(packageAddrPath, projectAddrPath);
+            Directory.Delete(packageAddrPath, true);
         }
 
         private static void ExtractProjectSettings()

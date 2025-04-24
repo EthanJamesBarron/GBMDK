@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace GBMDK.Editor
 {
-    public class BuildShortcut
+    public static class BuildShortcut
     {
         [MenuItem("GBMDK/Build Addressable Content", priority = 10)]
         public static void OnTrigger()
