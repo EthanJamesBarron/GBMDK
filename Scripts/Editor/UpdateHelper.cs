@@ -1,16 +1,17 @@
 using System.IO;
 using UnityEditor;
+using UnityEditor.AddressableAssets;
+using UnityEditor.AddressableAssets.Settings;
+using UnityEditor.AddressableAssets.Settings.GroupSchemas;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using Application = UnityEngine.Application;
 
 namespace GBMDK.Editor
 {
     [InitializeOnLoad]
     public static class UpdateHelper
     {
-        public const string GBMDKFirstRunKey = "GBMDK_FirstRun";
-        
-        public static bool IsFirstRun => EditorPrefs.GetBool(GBMDKFirstRunKey, true);
-        
         static UpdateHelper()
         {
             Initialize();
@@ -18,21 +19,21 @@ namespace GBMDK.Editor
 
         private static void Initialize()
         {
-            if (!IsFirstRun) return;
+            if (!GBMDKConfigSettings.instance || !GBMDKConfigSettings.instance.IsFirstRun) return;
             
-            ExtractAddressableData();      
+            ExtractAddressableData();
             ExtractProjectSettings();
-            EditorPrefs.SetBool(GBMDKFirstRunKey, false);
+            EditorPrefs.SetBool(GBMDKConfigSettings.GBMDKFirstRunKey, false);
         }
 
-        [MenuItem("GBMDK/Testing/Set First Run", priority = 10)]
+        [UnityEditor.MenuItem("GBMDK/Testing/Set First Run", priority = 10)]
         private static void SetFirstRun()
         {
-            EditorPrefs.SetBool(GBMDKFirstRunKey, true);
+            EditorPrefs.SetBool(GBMDKConfigSettings.GBMDKFirstRunKey, true);
             Initialize();
         }
 
-        [MenuItem("GBMDK/Refresh Project Assets")]
+        [UnityEditor.MenuItem("GBMDK/Refresh Project Assets")]
         private static void RefreshProjectAssets()
         {
             AssetDatabase.Refresh();
@@ -40,19 +41,69 @@ namespace GBMDK.Editor
 
         private static void ExtractAddressableData()
         {
-            var packageAddrPath = $"{Application.dataPath}/../Packages/com.cementgb.gbmdk/AddressableAssetsData";
-            var projectAddrPath = $"{Application.dataPath}/AddressableAssetsData";
-            if (!Directory.Exists(packageAddrPath) || Directory.Exists(projectAddrPath)) return;
+            if (!EditorUtility.DisplayDialog("Destructive Action Warning",
+                    "First Run has been activated and is about to update your Addressables configuration. This has a chance of deleting your current Addressables data, and might require you to reassign your assets as Addressable.",
+                    "OK", "Cancel")) return;
             
-            CopyFilesRecursively(packageAddrPath, projectAddrPath);
-            Directory.Delete(packageAddrPath, true);
+            var projectAddrData = $"{Application.dataPath}/../{AddressableAssetSettingsDefaultObject.kDefaultConfigFolder}";
+
+            if (Directory.Exists(projectAddrData) && AddressableAssetSettingsDefaultObject.SettingsExists)
+            {
+                AssetDatabase.DeleteAsset("Assets/AddressableAssetsData");
+                Object.DestroyImmediate(AddressableAssetSettingsDefaultObject.Settings, true);
+            }
+            
+            AddressableAssetSettingsDefaultObject.Settings = AddressableAssetSettings.Create(AddressableAssetSettingsDefaultObject.kDefaultConfigFolder, AddressableAssetSettingsDefaultObject.kDefaultConfigAssetName, true, true);
+            Debug.Assert(AddressableAssetSettingsDefaultObject.SettingsExists, "Something went wrong; AddressableAssetSettings default object does not exist!");
+
+            AddressableAssetSettingsDefaultObject.Settings.BuildRemoteCatalog = true;
+            AddressableAssetSettingsDefaultObject.Settings.UniqueBundleIds = true;
+            AddressableAssetSettingsDefaultObject.Settings.OverridePlayerVersion = "[UnityEditor.PlayerSettings.bundleVersion]";
+            
+            var bundledAssetSchemaDefaultGroup = AddressableAssetSettingsDefaultObject.Settings.DefaultGroup.GetSchema<BundledAssetGroupSchema>();
+            bundledAssetSchemaDefaultGroup.UseAssetBundleCrc = false;
+            bundledAssetSchemaDefaultGroup.InternalIdNamingMode = BundledAssetGroupSchema.AssetNamingMode.FullPath;
+            bundledAssetSchemaDefaultGroup.InternalBundleIdMode =
+                BundledAssetGroupSchema.BundleInternalIdMode.GroupGuidProjectIdEntriesHash;
+            
+            foreach (var template in AddressableAssetSettingsDefaultObject.Settings.GroupTemplateObjects)
+            {
+                if (template is not AddressableAssetGroupTemplate castedTemplate) return;
+                var bundledAssetSchema =
+                    (BundledAssetGroupSchema)castedTemplate.GetSchemaByType(typeof(BundledAssetGroupSchema));
+                if (!bundledAssetSchema) 
+                    continue;
+                
+                bundledAssetSchemaDefaultGroup.InternalIdNamingMode = BundledAssetGroupSchema.AssetNamingMode.Filename;
+                bundledAssetSchemaDefaultGroup.InternalBundleIdMode =
+                    BundledAssetGroupSchema.BundleInternalIdMode.GroupGuidProjectIdEntriesHash;
+                bundledAssetSchema.UseAssetBundleCrc = false;
+            }
+            
+            AddressableAssetSettingsDefaultObject.Settings.profileSettings.CreateValue("ModName", "NewMod");
+            AddressableAssetSettingsDefaultObject.Settings.profileSettings.SetValue(
+                AddressableAssetSettingsDefaultObject.Settings.activeProfileId,
+                "ModName", "NewMod");
+            AddressableAssetSettingsDefaultObject.Settings.profileSettings.SetValue(
+                AddressableAssetSettingsDefaultObject.Settings.activeProfileId,
+                "Remote.BuildPath", "[UnityEngine.Application.dataPath]/Exported/[ModName]/aa");
+            AddressableAssetSettingsDefaultObject.Settings.profileSettings.SetValue(
+                AddressableAssetSettingsDefaultObject.Settings.activeProfileId,
+                "Remote.LoadPath", "{MelonLoader.Utils.MelonEnvironment.ModsDirectory}/[ModName]/aa");
+            AddressableAssetSettingsDefaultObject.Settings.profileSettings.SetValue(
+                AddressableAssetSettingsDefaultObject.Settings.activeProfileId,
+                "Local.BuildPath", "[UnityEngine.Application.dataPath]/Exported/[ModName]/aa");
+            AddressableAssetSettingsDefaultObject.Settings.profileSettings.SetValue(
+                AddressableAssetSettingsDefaultObject.Settings.activeProfileId,
+                "Local.LoadPath", "{MelonLoader.Utils.MelonEnvironment.ModsDirectory}/[ModName]/aa");
         }
 
         private static void ExtractProjectSettings()
         {
             var packageProjectSettingsPath = $"{Application.dataPath}/../Packages/com.cementgb.gbmdk/ProjectSettings";
             var projectProjectSettingsPath = $"{Application.dataPath}/../ProjectSettings";
-            if (!Directory.Exists(packageProjectSettingsPath) || !Directory.Exists(projectProjectSettingsPath)) return;
+            if (!Directory.Exists(packageProjectSettingsPath) || !Directory.Exists(projectProjectSettingsPath)) 
+                return;
             
             Directory.Delete(projectProjectSettingsPath, true);
             CopyFilesRecursively(packageProjectSettingsPath, projectProjectSettingsPath);
@@ -60,12 +111,12 @@ namespace GBMDK.Editor
         
         private static void CopyFilesRecursively(string sourcePath, string targetPath)
         {
-            foreach (string dirPath in Directory.GetDirectories(sourcePath, "*", SearchOption.AllDirectories))
+            foreach (var dirPath in Directory.GetDirectories(sourcePath, "*", SearchOption.AllDirectories))
             {
                 Directory.CreateDirectory(dirPath.Replace(sourcePath, targetPath));
             }
 
-            foreach (string newPath in Directory.GetFiles(sourcePath, "*.*",SearchOption.AllDirectories))
+            foreach (var newPath in Directory.GetFiles(sourcePath, "*.*",SearchOption.AllDirectories))
             {
                 File.Copy(newPath, newPath.Replace(sourcePath, targetPath), true);
             }

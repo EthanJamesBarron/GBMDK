@@ -22,7 +22,7 @@ namespace GBMDK.Editor
             AssetDatabase.SaveAssets();
         }
 
-        private static string GetCurrentSelectedPath()
+        private static string GetCurrentSelectedAssetPath()
         {
             var path = AssetDatabase.GetAssetPath(Selection.activeObject);
             if (path == "")
@@ -34,9 +34,15 @@ namespace GBMDK.Editor
         }
         
         [MenuItem("Assets/GBMDK/Starters/Costume Starter", priority = 10000)]
-        public static void CreateCostumeStuff()
+        public static void CreateCostumeStuff(string fallbackPath=null)
         {
-            var path = GetCurrentSelectedPath();
+            if (!AddressableAssetSettingsDefaultObject.SettingsExists)
+            {
+                Debug.LogError("Addressables not initialized!");
+                return;
+            }
+
+            var path = string.IsNullOrWhiteSpace(fallbackPath) ? GetCurrentSelectedAssetPath() : fallbackPath;
 
             var prefabTemplate = PrefabUtility.LoadPrefabContents($"Packages/com.cementgb.gbmdk/Prefabs/Templates/CustomContent/HatTemplate.prefab");
             var assetPath = AssetDatabase.GenerateUniqueAssetPath(Path.Combine(path, $"NewCostume.prefab"));
@@ -68,9 +74,15 @@ namespace GBMDK.Editor
         }
 
         [MenuItem("Assets/GBMDK/Starters/Map Starter", priority = 10000)]
-        public static void CreateMapStuff()
+        public static void CreateMapStuff(string fallbackPath=null)
         {
-            var path = GetCurrentSelectedPath();
+            if (!AddressableAssetSettingsDefaultObject.SettingsExists)
+            {
+                Debug.LogError("Addressables not initialized!");
+                return;
+            }
+            
+            var path = string.IsNullOrWhiteSpace(fallbackPath) ? GetCurrentSelectedAssetPath() : fallbackPath;
 
             var sceneTemplate = AssetDatabase.LoadAssetAtPath<SceneTemplateAsset>("Packages/com.cementgb.gbmdk/Scenes/MapTemplate_Template.scenetemplate");
             var scenePath = AssetDatabase.GenerateUniqueAssetPath(Path.Combine(path, "NewMap.unity"));
