@@ -7,8 +7,8 @@ namespace GBMDK.Editor
         [MenuItem("GBMDK/Testing/Test GBMDK Templates")]
         public static void Test()
         {
-            ContentStarters.CreateMapStuff("Maps/NewMap");
-            ContentStarters.CreateCostumeStuff("Costumes/NewCostume");
+            ContentStarters.CreateMapStuff();
+            ContentStarters.CreateCostumeStuff();
             
             ModTester.TestMod();
         }

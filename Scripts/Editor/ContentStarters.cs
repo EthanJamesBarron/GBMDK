@@ -33,7 +33,12 @@ namespace GBMDK.Editor
             return path;
         }
         
-        [MenuItem("Assets/GBMDK/Starters/Costume Starter", priority = 10000)]
+        [MenuItem("Assets/GBMDK/Starters/Costume Starter", priority = 10000)] 
+        public static void CostumeStarter()
+        {
+            CreateCostumeStuff();
+        }
+            
         public static void CreateCostumeStuff(string fallbackPath=null)
         {
             if (!AddressableAssetSettingsDefaultObject.SettingsExists)
@@ -74,6 +79,11 @@ namespace GBMDK.Editor
         }
 
         [MenuItem("Assets/GBMDK/Starters/Map Starter", priority = 10000)]
+		public static void MapStarter()
+		{
+			CreateMapStuff();
+		}		
+
         public static void CreateMapStuff(string fallbackPath=null)
         {
             if (!AddressableAssetSettingsDefaultObject.SettingsExists)
