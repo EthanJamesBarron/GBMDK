@@ -21,22 +21,16 @@ namespace GBMDK.Editor
         {
             if (!GBMDKConfigSettings.instance || !GBMDKConfigSettings.instance.IsFirstRun) return;
             
-            ExtractAddressableData();
             ExtractProjectSettings();
+            ExtractAddressableData();
             EditorPrefs.SetBool(GBMDKConfigSettings.GBMDKFirstRunKey, false);
         }
 
-        [UnityEditor.MenuItem("GBMDK/Testing/Set First Run", priority = 10)]
+        [MenuItem("GBMDK/Testing/Set First Run", priority = 10)]
         private static void SetFirstRun()
         {
             EditorPrefs.SetBool(GBMDKConfigSettings.GBMDKFirstRunKey, true);
             Initialize();
-        }
-
-        [UnityEditor.MenuItem("GBMDK/Refresh Project Assets")]
-        private static void RefreshProjectAssets()
-        {
-            AssetDatabase.Refresh();
         }
 
         private static void ExtractAddressableData()
@@ -73,9 +67,10 @@ namespace GBMDK.Editor
                     (BundledAssetGroupSchema)castedTemplate.GetSchemaByType(typeof(BundledAssetGroupSchema));
                 if (!bundledAssetSchema) 
                     continue;
-                
-                bundledAssetSchemaDefaultGroup.InternalIdNamingMode = BundledAssetGroupSchema.AssetNamingMode.Filename;
-                bundledAssetSchemaDefaultGroup.InternalBundleIdMode =
+
+                bundledAssetSchema.UseAssetBundleCrc = false;
+                bundledAssetSchema.InternalIdNamingMode = BundledAssetGroupSchema.AssetNamingMode.Filename;
+                bundledAssetSchema.InternalBundleIdMode =
                     BundledAssetGroupSchema.BundleInternalIdMode.GroupGuidProjectIdEntriesHash;
                 bundledAssetSchema.UseAssetBundleCrc = false;
             }
