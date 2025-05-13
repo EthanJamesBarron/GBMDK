@@ -27,7 +27,7 @@ namespace GBMDK.Editor
         }
 
         [MenuItem("GBMDK/Testing/Set First Run", priority = 10)]
-        private static void SetFirstRun()
+        public static void SetFirstRun()
         {
             EditorPrefs.SetBool(GBMDKConfigSettings.GBMDKFirstRunKey, true);
             Initialize();

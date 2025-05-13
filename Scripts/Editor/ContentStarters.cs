@@ -42,15 +42,15 @@ namespace GBMDK.Editor
         public static void CreateCostumeStuff(string fallbackPath=null)
         {
             if (!AddressableAssetSettingsDefaultObject.SettingsExists)
-            {
-                Debug.LogError("Addressables not initialized!");
-                return;
-            }
+                UpdateHelper.SetFirstRun();
 
             var path = string.IsNullOrWhiteSpace(fallbackPath) ? GetCurrentSelectedAssetPath() : fallbackPath;
+            if (path == null) return;
+            
+            Directory.CreateDirectory(Path.GetFullPath(path));
 
             var prefabTemplate = PrefabUtility.LoadPrefabContents($"Packages/com.cementgb.gbmdk/Prefabs/Templates/CustomContent/HatTemplate.prefab");
-            var assetPath = AssetDatabase.GenerateUniqueAssetPath(Path.Combine(path, $"NewCostume.prefab"));
+            var assetPath = $"{path}/NewCostume.prefab";
             var prefab = PrefabUtility.SaveAsPrefabAssetAndConnect(prefabTemplate, assetPath, InteractionMode.AutomatedAction);
             prefab.name = "NewCostume";
             Object.DestroyImmediate(prefabTemplate);
@@ -67,7 +67,7 @@ namespace GBMDK.Editor
             {
                 new(AssetDatabase.GUIDFromAssetPath(assetPath).ToString())
             };
-            var dataPath = AssetDatabase.GenerateUniqueAssetPath(Path.Combine(path, $"{costumeData.name}.asset"));
+            var dataPath = $"{path}/{costumeData.name}.asset";
             AssetDatabase.CreateAsset(costumeData, dataPath);
             EditorUtility.SetDirty(costumeData);
 
@@ -87,15 +87,15 @@ namespace GBMDK.Editor
         public static void CreateMapStuff(string fallbackPath=null)
         {
             if (!AddressableAssetSettingsDefaultObject.SettingsExists)
-            {
-                Debug.LogError("Addressables not initialized!");
-                return;
-            }
+                UpdateHelper.SetFirstRun();
             
             var path = string.IsNullOrWhiteSpace(fallbackPath) ? GetCurrentSelectedAssetPath() : fallbackPath;
+            if (path == null) return;
+            
+            Directory.CreateDirectory(Path.GetFullPath(path));
 
             var sceneTemplate = AssetDatabase.LoadAssetAtPath<SceneTemplateAsset>("Packages/com.cementgb.gbmdk/Scenes/MapTemplate_Template.scenetemplate");
-            var scenePath = AssetDatabase.GenerateUniqueAssetPath(Path.Combine(path, "NewMap.unity"));
+            var scenePath = $"{path}/NewMap.unity";
             var newScene = SceneTemplateService.Instantiate(sceneTemplate, false, scenePath);
             Lightmapping.Bake();
             EditorSceneManager.SaveScene(newScene.scene);
@@ -104,7 +104,7 @@ namespace GBMDK.Editor
 
             var sceneData = ScriptableObject.CreateInstance<SceneData>();
             sceneData.name = "NewMap-Data";
-            var dataPath = AssetDatabase.GenerateUniqueAssetPath(Path.Combine(path, "NewMap-Data.asset"));
+            var dataPath = $"{path}/NewMap-Data.asset";
             sceneData._sceneRef = new AssetReference(AssetDatabase.GUIDFromAssetPath(scenePath).ToString());
             AssetDatabase.CreateAsset(sceneData, dataPath);
             EditorUtility.SetDirty(sceneData);
@@ -113,7 +113,7 @@ namespace GBMDK.Editor
 
             var sceneInfo = ScriptableObject.CreateInstance<CustomMapInfo>();
             sceneInfo.name = "NewMap-Info";
-            var infoPath = AssetDatabase.GenerateUniqueAssetPath(Path.Combine(path, "NewMap-Info.asset"));
+            var infoPath = $"{path}/NewMap-Info.asset";
             sceneInfo.allowedGamemodes = GB.Gamemodes.GameModeEnum.Melee | GB.Gamemodes.GameModeEnum.Waves;
             AssetDatabase.CreateAsset(sceneInfo, infoPath);
             EditorUtility.SetDirty(sceneInfo);
