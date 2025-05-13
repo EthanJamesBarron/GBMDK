@@ -2,7 +2,7 @@ using UnityEditor;
 
 namespace GBMDK.Editor
 {
-    public class TestTemplates
+    public static class TestTemplates
     {
         [MenuItem("GBMDK/Testing/Test GBMDK Templates")]
         public static void Test()
