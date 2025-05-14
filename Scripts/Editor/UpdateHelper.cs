@@ -75,10 +75,8 @@ namespace GBMDK.Editor
                 bundledAssetSchema.UseAssetBundleCrc = false;
             }
             
-            AddressableAssetSettingsDefaultObject.Settings.profileSettings.CreateValue("ModName", "NewMod");
-            AddressableAssetSettingsDefaultObject.Settings.profileSettings.SetValue(
-                AddressableAssetSettingsDefaultObject.Settings.activeProfileId,
-                "ModName", "NewMod");
+            if (AddressableAssetSettingsDefaultObject.Settings.profileSettings.GetValueByName(AddressableAssetSettingsDefaultObject.Settings.activeProfileId, "ModName") == null)
+                AddressableAssetSettingsDefaultObject.Settings.profileSettings.CreateValue("ModName", "NewMod");
             AddressableAssetSettingsDefaultObject.Settings.profileSettings.SetValue(
                 AddressableAssetSettingsDefaultObject.Settings.activeProfileId,
                 "Remote.BuildPath", "[UnityEngine.Application.dataPath]/Exported/[ModName]/aa");
