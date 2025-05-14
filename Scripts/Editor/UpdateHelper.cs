@@ -98,7 +98,6 @@ namespace GBMDK.Editor
             if (!Directory.Exists(packageProjectSettingsPath) || !Directory.Exists(projectProjectSettingsPath)) 
                 return;
             
-            Directory.Delete(projectProjectSettingsPath, true);
             CopyFilesRecursively(packageProjectSettingsPath, projectProjectSettingsPath);
         }
         
