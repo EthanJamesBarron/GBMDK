@@ -36,7 +36,7 @@ namespace GBMDK.Editor
         private static void ExtractAddressableData()
         {
             if (!EditorUtility.DisplayDialog("Destructive Action Warning",
-                    "First Run has been activated and is about to update your Addressables configuration. This has a chance of deleting your current Addressables data, and might require you to reassign your assets as Addressable.",
+                    "First Run has been activated and is about to update your Addressables configuration. This may delete your current Addressables data, and might require you to reassign your assets as Addressable.",
                     "OK", "Cancel")) return;
             
             var projectAddrData = $"{Application.dataPath}/../{AddressableAssetSettingsDefaultObject.kDefaultConfigFolder}";
