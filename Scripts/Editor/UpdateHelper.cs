@@ -69,7 +69,7 @@ namespace GBMDK.Editor
                     continue;
 
                 bundledAssetSchema.UseAssetBundleCrc = false;
-                bundledAssetSchema.InternalIdNamingMode = BundledAssetGroupSchema.AssetNamingMode.Filename;
+                bundledAssetSchema.InternalIdNamingMode = BundledAssetGroupSchema.AssetNamingMode.FullPath;
                 bundledAssetSchema.InternalBundleIdMode =
                     BundledAssetGroupSchema.BundleInternalIdMode.GroupGuidProjectIdEntriesHash;
                 bundledAssetSchema.UseAssetBundleCrc = false;
