@@ -23,7 +23,7 @@ namespace GBMDK.Editor
 
         public static void RunMapTest()
         {
-            if (string.IsNullOrEmpty(GameFolderPath))
+            if (string.IsNullOrEmpty(GameFolderPath) || !File.Exists(GameExePath))
             {
                 Debug.LogError("Please select Gang Beasts folder in GBMDK > Open Config.");
                 return;
@@ -56,16 +56,13 @@ namespace GBMDK.Editor
                 var modName = settings.profileSettings.GetValueByName(settings.activeProfileId, "ModName");
 
                 var sourceFolderPath = Path.Combine(ExportedFolderPath, modName);
-                var destinationFolderPath = Path.Combine(GameFolderPath, "Mods", modName);
+                var destinationFolderPath = Path.Combine(ModsFolderPath, modName);
 
                 // Check if the source folder exists
                 if (Directory.Exists(sourceFolderPath))
                 {
-                    // If the destination folder doesn't exist, create it
-                    if (!Directory.Exists(destinationFolderPath))
-                    {
-                        Directory.CreateDirectory(destinationFolderPath);
-                    }
+                    Directory.Delete(destinationFolderPath, true);
+                    Directory.CreateDirectory(destinationFolderPath);
 
                     // Copy all files from the source to the destination folder
                     foreach (var file in Directory.GetFiles(sourceFolderPath))
