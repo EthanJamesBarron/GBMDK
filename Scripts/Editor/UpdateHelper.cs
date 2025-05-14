@@ -48,7 +48,7 @@ namespace GBMDK.Editor
             }
             
             AddressableAssetSettingsDefaultObject.Settings = AddressableAssetSettings.Create(AddressableAssetSettingsDefaultObject.kDefaultConfigFolder, AddressableAssetSettingsDefaultObject.kDefaultConfigAssetName, true, true);
-            Debug.Assert(AddressableAssetSettingsDefaultObject.SettingsExists, "Something went wrong; AddressableAssetSettings default object does not exist!");
+            Debug.Assert(AddressableAssetSettingsDefaultObject.SettingsExists, "Something went wrong; Addressables settings do not exist!");
 
             AddressableAssetSettingsDefaultObject.Settings.BuildRemoteCatalog = true;
             AddressableAssetSettingsDefaultObject.Settings.UniqueBundleIds = true;
