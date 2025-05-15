@@ -88,3 +88,6 @@ README.md.meta
 .idea
 AddressableAssetsData/Windows/
 AddressableAssetsData/AssetGroups/
+Scripts/Editor/Third-Party/QuickAssetMigrator/source_folder_saved.txt
+
+Scripts/Editor/Third-Party/QuickAssetMigrator/source_folder_saved.txt.meta

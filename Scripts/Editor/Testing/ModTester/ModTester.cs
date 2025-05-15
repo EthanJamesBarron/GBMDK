@@ -44,8 +44,6 @@ namespace GBMDK.Editor
                 FileName = GameExePath,
                 UseShellExecute = true
             });
-
-            Debug.Log("Map tested successfully!");
         }
 
         private static void CopyFolder()

@@ -21,7 +21,7 @@ namespace FizzSDK.QuickAssetMigrator
         private bool _hasMigrated;
         private bool _infoFoldoutVisible;
         private static string _sourceFolder;
-        private List<string> _selectedAssets = new();
+        private readonly List<string> _selectedAssets = new();
 
         [MenuItem("Tools/GBMDK/Quick Asset Migrator")]
         public static void ShowWindow()
@@ -43,7 +43,7 @@ namespace FizzSDK.QuickAssetMigrator
         private static string GetWorkingDirectory()
         {
             return
-                $"{Application.dataPath}/../Packages/com.cementgb.gbmdk/Scripts/Editor/Third-Party/QuickAssetMigrator";
+                Path.GetFullPath("Packages/com.cementgb.gbmdk/Scripts/Editor/Third-Party/QuickAssetMigrator");
         }
 
         private static string[] GetExtensions()
@@ -104,7 +104,7 @@ namespace FizzSDK.QuickAssetMigrator
                 }
             }
 
-            if (_sourceFolder != null && _sourceFolder.Length > 0)
+            if (_sourceFolder is { Length: > 0 })
             {
                 EditorGUILayout.BeginVertical(GUI.skin.box);
                 EditorGUILayout.LabelField("Asset Selection", EditorStyles.boldLabel);

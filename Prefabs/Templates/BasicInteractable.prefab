@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6202670885434734475}
   - component: {fileID: 8125205685521042601}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: col
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 7194380774725124363}
   - component: {fileID: 5916888302091942593}
   - component: {fileID: 2594658051596046378}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: BasicInteractable
   m_TagString: Prop (Low Priority)
   m_Icon: {fileID: 0}
@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 6202670886205869146}
   - component: {fileID: 6202670886205869144}
   - component: {fileID: 6202670886205869147}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
