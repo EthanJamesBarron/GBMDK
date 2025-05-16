@@ -1,4 +1,5 @@
 using UnityEditor;
+using UnityEditor.AddressableAssets;
 using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -20,6 +21,20 @@ namespace GBMDK.Editor
             if (!GBMDKConfigSettings.instance) return;
             
             var editor = new InspectorElement(GBMDKConfigSettings.instance);
+            
+            var activeModNameFld = new TextField("Active Mod Name")
+            {
+                value = AddressableAssetSettingsDefaultObject.SettingsExists
+                    ? AddressableAssetSettingsDefaultObject.Settings.profileSettings.GetValueByName(
+                        AddressableAssetSettingsDefaultObject.Settings.activeProfileId, "ModName")
+                    : ""
+            };
+            
+            activeModNameFld.RegisterValueChangedCallback(evt =>
+            {
+                if (!AddressableAssetSettingsDefaultObject.SettingsExists) return;
+                AddressableAssetSettingsDefaultObject.Settings.profileSettings.SetValue(AddressableAssetSettingsDefaultObject.Settings.activeProfileId, "ModName", evt.newValue);
+            });
 
             var gamePathBtn = new Button(() =>
             {
@@ -45,6 +60,11 @@ namespace GBMDK.Editor
                 GBMDKConfigSettings.instance.gameSettings.launchArgs = evt.newValue;
                 GBMDKConfigSettings.instance.Save();
             });
+
+            var modSettingsLbl = new Foldout()
+            {
+                text = "Mod Settings"
+            };
             
             var gameSettingsLbl = new Foldout()
             {
@@ -54,7 +74,10 @@ namespace GBMDK.Editor
             gameSettingsLbl.Add(gamePathBtn);
             gameSettingsLbl.Add(launchArgsFld);
             
+            modSettingsLbl.Add(activeModNameFld);
+            
             root.Add(gameSettingsLbl);
+            root.Add(modSettingsLbl);
             root.Add(editor);
         }
     }
