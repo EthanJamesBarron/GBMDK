@@ -59,7 +59,8 @@ namespace GBMDK.Editor
                 // Check if the source folder exists
                 if (Directory.Exists(sourceFolderPath))
                 {
-                    Directory.Delete(destinationFolderPath, true);
+                    if (Directory.Exists(destinationFolderPath))
+                        Directory.Delete(destinationFolderPath, true);
                     Directory.CreateDirectory(destinationFolderPath);
 
                     // Copy all files from the source to the destination folder
