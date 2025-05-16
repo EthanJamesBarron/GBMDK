@@ -19,7 +19,7 @@ namespace GBMDK.Editor
 
         private static void Initialize()
         {
-            if (!GBMDKConfigSettings.instance || !GBMDKConfigSettings.instance.IsFirstRun) return;
+            if (!GBMDKConfigSettings.IsFirstRun) return;
             
             ExtractProjectSettings();
             ExtractAddressableData();

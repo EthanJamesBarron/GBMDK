@@ -8,7 +8,7 @@ namespace GBMDK.Editor
     {
         public const string GBMDKFirstRunKey = "GBMDK_FirstRun";
         
-        public bool IsFirstRun => EditorPrefs.GetBool(GBMDKFirstRunKey, true);
+        public static bool IsFirstRun => EditorPrefs.GetBool(GBMDKFirstRunKey, true);
         
         public GameSettings gameSettings;
 
