@@ -72,7 +72,6 @@ namespace GBMDK.Editor
                 bundledAssetSchema.InternalIdNamingMode = BundledAssetGroupSchema.AssetNamingMode.FullPath;
                 bundledAssetSchema.InternalBundleIdMode =
                     BundledAssetGroupSchema.BundleInternalIdMode.GroupGuidProjectIdEntriesHash;
-                bundledAssetSchema.UseAssetBundleCrc = false;
             }
             
             if (AddressableAssetSettingsDefaultObject.Settings.profileSettings.GetValueByName(AddressableAssetSettingsDefaultObject.Settings.activeProfileId, "ModName") == null)
