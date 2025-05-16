@@ -49,8 +49,7 @@ namespace GBMDK.Editor
             
             AddressableAssetSettingsDefaultObject.Settings = AddressableAssetSettings.Create(AddressableAssetSettingsDefaultObject.kDefaultConfigFolder, AddressableAssetSettingsDefaultObject.kDefaultConfigAssetName, true, true);
             Debug.Assert(AddressableAssetSettingsDefaultObject.SettingsExists, "Something went wrong; Addressables settings do not exist!");
-
-            AddressableAssetSettingsDefaultObject.Settings.BuildRemoteCatalog = true;
+            
             AddressableAssetSettingsDefaultObject.Settings.UniqueBundleIds = true;
             AddressableAssetSettingsDefaultObject.Settings.OverridePlayerVersion = "[UnityEditor.PlayerSettings.bundleVersion]";
             
@@ -88,6 +87,12 @@ namespace GBMDK.Editor
             AddressableAssetSettingsDefaultObject.Settings.profileSettings.SetValue(
                 AddressableAssetSettingsDefaultObject.Settings.activeProfileId,
                 "Local.LoadPath", "{MelonLoader.Utils.MelonEnvironment.ModsDirectory}/[ModName]/aa");
+            
+            AddressableAssetSettingsDefaultObject.Settings.BuildRemoteCatalog = true;
+            AddressableAssetSettingsDefaultObject.Settings.RemoteCatalogBuildPath.SetVariableByName(
+                AddressableAssetSettingsDefaultObject.Settings, "Remote.BuildPath");
+            AddressableAssetSettingsDefaultObject.Settings.RemoteCatalogLoadPath.SetVariableByName(
+                AddressableAssetSettingsDefaultObject.Settings, "Remote.LoadPath");
         }
 
         private static void ExtractProjectSettings()
