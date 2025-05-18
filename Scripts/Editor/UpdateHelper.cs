@@ -4,7 +4,6 @@ using UnityEditor.AddressableAssets;
 using UnityEditor.AddressableAssets.Settings;
 using UnityEditor.AddressableAssets.Settings.GroupSchemas;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 using Application = UnityEngine.Application;
 
 namespace GBMDK.Editor
@@ -53,26 +52,6 @@ namespace GBMDK.Editor
             AddressableAssetSettingsDefaultObject.Settings.UniqueBundleIds = true;
             AddressableAssetSettingsDefaultObject.Settings.OverridePlayerVersion = "[UnityEditor.PlayerSettings.bundleVersion]";
             
-            var bundledAssetSchemaDefaultGroup = AddressableAssetSettingsDefaultObject.Settings.DefaultGroup.GetSchema<BundledAssetGroupSchema>();
-            bundledAssetSchemaDefaultGroup.UseAssetBundleCrc = false;
-            bundledAssetSchemaDefaultGroup.InternalIdNamingMode = BundledAssetGroupSchema.AssetNamingMode.FullPath;
-            bundledAssetSchemaDefaultGroup.InternalBundleIdMode =
-                BundledAssetGroupSchema.BundleInternalIdMode.GroupGuidProjectIdEntriesHash;
-            
-            foreach (var template in AddressableAssetSettingsDefaultObject.Settings.GroupTemplateObjects)
-            {
-                if (template is not AddressableAssetGroupTemplate castedTemplate) return;
-                var bundledAssetSchema =
-                    (BundledAssetGroupSchema)castedTemplate.GetSchemaByType(typeof(BundledAssetGroupSchema));
-                if (!bundledAssetSchema) 
-                    continue;
-
-                bundledAssetSchema.UseAssetBundleCrc = false;
-                bundledAssetSchema.InternalIdNamingMode = BundledAssetGroupSchema.AssetNamingMode.FullPath;
-                bundledAssetSchema.InternalBundleIdMode =
-                    BundledAssetGroupSchema.BundleInternalIdMode.GroupGuidProjectIdEntriesHash;
-            }
-            
             if (AddressableAssetSettingsDefaultObject.Settings.profileSettings.GetValueByName(AddressableAssetSettingsDefaultObject.Settings.activeProfileId, "ModName") == null)
                 AddressableAssetSettingsDefaultObject.Settings.profileSettings.CreateValue("ModName", "NewMod");
             AddressableAssetSettingsDefaultObject.Settings.profileSettings.SetValue(
@@ -93,6 +72,34 @@ namespace GBMDK.Editor
                 AddressableAssetSettingsDefaultObject.Settings, "Remote.BuildPath");
             AddressableAssetSettingsDefaultObject.Settings.RemoteCatalogLoadPath.SetVariableByName(
                 AddressableAssetSettingsDefaultObject.Settings, "Remote.LoadPath");
+            
+            var bundledAssetSchemaDefaultGroup = AddressableAssetSettingsDefaultObject.Settings.DefaultGroup.GetSchema<BundledAssetGroupSchema>();
+            bundledAssetSchemaDefaultGroup.UseAssetBundleCrc = false;
+            bundledAssetSchemaDefaultGroup.InternalIdNamingMode = BundledAssetGroupSchema.AssetNamingMode.FullPath;
+            bundledAssetSchemaDefaultGroup.InternalBundleIdMode =
+                BundledAssetGroupSchema.BundleInternalIdMode.GroupGuidProjectIdEntriesHash;
+            bundledAssetSchemaDefaultGroup.BuildPath.SetVariableByName(AddressableAssetSettingsDefaultObject.Settings,
+                "Remote.BuildPath");
+            bundledAssetSchemaDefaultGroup.LoadPath.SetVariableByName(AddressableAssetSettingsDefaultObject.Settings,
+                "Remote.LoadPath");
+            
+            foreach (var template in AddressableAssetSettingsDefaultObject.Settings.GroupTemplateObjects)
+            {
+                if (template is not AddressableAssetGroupTemplate castedTemplate) return;
+                var bundledAssetSchema =
+                    (BundledAssetGroupSchema)castedTemplate.GetSchemaByType(typeof(BundledAssetGroupSchema));
+                if (!bundledAssetSchema) 
+                    continue;
+
+                bundledAssetSchema.UseAssetBundleCrc = false;
+                bundledAssetSchema.InternalIdNamingMode = BundledAssetGroupSchema.AssetNamingMode.FullPath;
+                bundledAssetSchema.InternalBundleIdMode =
+                    BundledAssetGroupSchema.BundleInternalIdMode.GroupGuidProjectIdEntriesHash;
+                bundledAssetSchema.BuildPath.SetVariableByName(AddressableAssetSettingsDefaultObject.Settings,
+                    "Remote.BuildPath");
+                bundledAssetSchema.LoadPath.SetVariableByName(AddressableAssetSettingsDefaultObject.Settings,
+                    "Remote.LoadPath");
+            }
         }
 
         private static void ExtractProjectSettings()
