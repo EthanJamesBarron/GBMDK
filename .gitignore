@@ -90,4 +90,4 @@ README.md.meta
 /Assets/log.txt.meta
 source_folder_saved.txt
 
-ProjectSettings/Packages/com.unity.services.core/Settings.json
+ProjectSettings/Packages/**/Settings.json
