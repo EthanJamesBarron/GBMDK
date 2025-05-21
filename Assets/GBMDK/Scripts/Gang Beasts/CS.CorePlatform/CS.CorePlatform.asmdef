@@ -1,8 +1,0 @@
-{
-  "name": "CS.CorePlatform",
-  "references": [
-    "Coatsink.Platform",
-    "com.unity.multiplayer-hlapi.Runtime"
-  ],
-  "allowUnsafeCode": true
-}

@@ -1,7 +1,0 @@
-{
-  "name": "PlayFabParty",
-  "references": [
-    "PlayFab"
-  ],
-  "allowUnsafeCode": true
-}

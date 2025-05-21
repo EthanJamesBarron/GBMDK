@@ -65,7 +65,7 @@ MonoBehaviour:
       - m_Id: 9e7aa19d20193ba44a768dd3da6394ec
         m_Value: http://[PrivateIpAddress]:[HostingServicePort]
       - m_Id: 2fbabeacb3e2957448f9d1b72b19cf77
-        m_Value: ModName
+        m_Value: NewMod
       - m_Id: 74a39b37858349046b69a288e568a9f5
         m_Value: '[UnityEngine.Application.dataPath]/Exported/[ModName]/aa'
       - m_Id: 0f497b7329d329f48bee8ae2131cc1d4

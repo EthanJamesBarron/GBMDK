@@ -74,6 +74,12 @@ crashlytics-build.properties
 LICENSE.meta
 README.md.meta
 
+.idea/
+
+# User mod files
+/Assets/Mods/**/*
+/Assets/Mods.meta
+
 # Skip migrated and exported content, as these can contain game assets we aren't allowed to distribute ourselves.
 /Assets/Exported/**/*
 /Assets/ConversionOutput/**/*
@@ -82,5 +88,6 @@ README.md.meta
 # User-specific migrator data
 /Assets/log.txt
 /Assets/log.txt.meta
-/Assets/GBMDK/Scripts/GBMDK/Editor/Third-Party/QuickAssetMigrator/source_folder_saved.txt
-/Assets/GBMDK/Scripts/GBMDK/Editor/Third-Party/QuickAssetMigrator/source_folder_saved.txt.meta
+source_folder_saved.txt
+
+ProjectSettings/Packages/com.unity.services.core/Settings.json
