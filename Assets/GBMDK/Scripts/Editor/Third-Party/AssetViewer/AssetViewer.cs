@@ -66,9 +66,15 @@ namespace TreeView
             GUILayout.Label("Select Catalog file:");
 
             GUILayout.BeginHorizontal();
-            
+
             if (GUILayout.Button("Browse", GUILayout.Width(80f)))
-                catalogPath = EditorUtility.OpenFilePanel("Select catalog file", catalogPath, "json");
+            {
+                var newCatalogPath = EditorUtility.OpenFilePanel("Select catalog file", catalogPath, "json");
+                if (!string.IsNullOrWhiteSpace(newCatalogPath))
+                    catalogPath = newCatalogPath;
+            }
+            
+            GUILayout.Label(catalogPath);
 
             GUILayout.EndHorizontal();
 
